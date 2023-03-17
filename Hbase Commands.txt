@@ -1,0 +1,4 @@
+hbase shell
+>help
+>>create 'user', {NAME => 'info', VERSIONS => 1}
+>>describe 'user'
