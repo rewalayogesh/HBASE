@@ -1,4 +1,4 @@
-Managingv Hbase with Hive:
+Managing Hbase with Hive:
 --------------------------
 HIVE:
 ....
