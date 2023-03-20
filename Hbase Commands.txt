@@ -1,4 +1,58 @@
 hbase shell
->help
->>create 'user', {NAME => 'info', VERSIONS => 1}
->>describe 'user'
+>>help
+
+>> create 'user', {NAME => 'info', VERSIONS => 1}
+
+>> describe 'user'
+
+>> put 'user', '42', 'info:name', 'Yogesh'
+
+>> scan 'user'
+
+>> put 'user', '43', 'info:name', 'Kumar'
+
+>> scan 'user'
+
+>> put 't1', 'r1', 'c1', 'value', ts1
+
+>> scan 'user'
+
+>> create 'blogs', 'meta', 'body', 'comment'
+
+>> list
+
+>>  describe 'blogs'
+
+>> create 'mytable', 'cf'
+
+>> scan 'mytable'
+
+>> put 'mytable', 'row1', 'cf:clo', 'foo'
+
+>> put 'mytable', 'row1', 'cf:clo', 'bar'
+
+>> scan 'mytable'
+
+>> put 'mytable', 'row1', 'cf:clo', 'bar'
+
+>> put 'mytable', 'row2', 'cf:clo', 'foo'
+
+>> scan 'mytable'
+
+>>  flush 'mytable'
+
+>> major_compact 'mytable'
+
+
+
+Now going to Hadoop Terminal
+
+>> hadoop fs -ls /hbase
+
+>> hadoop fs -ls /hbase/mytable
+
+>> hadoop fs -ls /hbase/mytable/*/cf
+
+>>  hadoop fs -cat hbase/mytable/0ced4895cbd8d945fe2ae3e99b715478/cf/c703a879ddcc46ef94244f2b96fa8bf6
+
+>> hadoop fs -cat hbase/mytable/0ced4895cbd8d945fe2ae3e99b715478/cf/c703a879ddcc46ef94244f2b96fa8bf6
